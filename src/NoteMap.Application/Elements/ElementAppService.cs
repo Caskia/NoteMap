@@ -34,6 +34,7 @@ namespace NoteMap.Elements
             }
 
             var element = input.MapTo<Element>();
+            element.UserId = map.UserId;
 
             element = await _elementService.CreateAsync(element);
 

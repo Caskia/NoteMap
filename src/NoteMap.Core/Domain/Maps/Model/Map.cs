@@ -12,7 +12,7 @@ namespace NoteMap.Maps
 
         public string Name { get; set; }
 
-        public Scale Scale { get; set; } = new Scale();
+        public Scale Scale { get; set; } = new Scale() { X = 1, Y = 1 };
 
         public long UserId { get; set; }
     }

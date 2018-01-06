@@ -1,4 +1,5 @@
 ﻿using Jane.AspNetCore.Cors;
+using Jane.AutoMapper;
 using Jane.Configurations;
 using Jane.Timing;
 using Microsoft.AspNetCore.Builder;
@@ -58,13 +59,21 @@ namespace NoteMap.WebApi
                 Assembly.GetExecutingAssembly()
             };
 
+            var autoMapperConfigurationAssemblies = new[]
+            {
+                Assembly.Load("NoteMap.Core"),
+                Assembly.Load("NoteMap.Application"),
+            };
+
             Configuration.Instance
                 .UseAutofac()
                 .RegisterCommonComponents()
                 .RegisterAssemblies(assemblies)
                 .UseMongoDb()
                 .UseLog4Net()
+                .UseAutoMapper(new AutoMapperConfiguration(), autoMapperConfigurationAssemblies)
                 .UseAspNetCore(services, out var provider)
+                .CreateAutoMapperMappings()
                 .UseClockProvider(ClockProviders.Utc)
                 .RegisterEventHandler(assemblies)
                 .RegisterUnhandledExceptionHandler();

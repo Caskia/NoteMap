@@ -21,8 +21,7 @@ namespace NoteMap.Maps
         public async Task<Map> CreateAsync(Map map)
         {
             map.Id = _idGenerator.NextId();
-            await _mapRepository.InsertAsync(map);
-            return map;
+            return await _mapRepository.InsertAsync(map);
         }
     }
 }

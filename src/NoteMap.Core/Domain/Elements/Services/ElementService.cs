@@ -21,9 +21,7 @@ namespace NoteMap.Elements
         public async Task<Element> CreateAsync(Element element)
         {
             element.Id = _idGenerator.NextId();
-            await _elementRepository.InsertAsync(element);
-
-            return element;
+            return await _elementRepository.InsertAsync(element);
         }
     }
 }
