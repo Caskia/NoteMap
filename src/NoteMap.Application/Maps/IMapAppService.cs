@@ -8,5 +8,7 @@ namespace NoteMap.Maps
         Task<MapDto> CreateMapAsync(CreateMapInput input);
 
         Task<MapDto> GetMapAsync(long id);
+
+        Task UpdateMapOffsetAsync(UpdateMapOffsetInput input);
     }
 }

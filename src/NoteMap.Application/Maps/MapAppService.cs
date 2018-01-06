@@ -38,5 +38,18 @@ namespace NoteMap.Maps
 
             return map.MapTo<MapDto>();
         }
+
+        public async Task UpdateMapOffsetAsync(UpdateMapOffsetInput input)
+        {
+            var map = await _mapRepository.FirstOrDefaultAsync(m => m.Id == input.Id);
+            if (map == null)
+            {
+                throw new BaseException($"Map[{input.Id}] not found!");
+            }
+
+            map.Offset = input.Offset;
+
+            await _mapRepository.UpdateAsync(map);
+        }
     }
 }

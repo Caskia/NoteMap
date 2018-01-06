@@ -80,6 +80,15 @@ namespace NoteMap.WebApi.Controllers
             return await _mapAppService.GetMapAsync(id);
         }
 
+        [Route("{id:long}/offset")]
+        [HttpPut]
+        public async Task<bool> UpdateMapOffsetAsync(long id, [FromBody]UpdateMapOffsetInput input)
+        {
+            input.Id = id;
+            await _mapAppService.UpdateMapOffsetAsync(input);
+            return true;
+        }
+
         [Route("{id:long}/elements/{elementId:long}/layer_styles")]
         [HttpPut]
         public async Task<bool> UpdateElementLayerStylesAsync(long id, long elementId, [FromBody]UpdateElementLayerStylesInput input)
