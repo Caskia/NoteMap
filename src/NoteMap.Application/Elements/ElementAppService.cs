@@ -41,7 +41,18 @@ namespace NoteMap.Elements
             return element.MapTo<ElementDto>();
         }
 
-        public async Task<IList<ElementDto>> GetElementsOnMap(GetElementsOnMapInput input)
+        public async Task DeleteElementAsync(long id)
+        {
+            var element = await _elementRepository.FirstOrDefaultAsync(e => e.Id == id);
+            if (element == null)
+            {
+                throw new BaseException($"Element[{id}] not found!");
+            }
+
+            await _elementRepository.DeleteAsync(id);
+        }
+
+        public async Task<IList<ElementDto>> GetElementsOnMapAsync(GetElementsOnMapInput input)
         {
             var map = await _mapRepository.FirstOrDefaultAsync(m => m.Id == input.MapId);
             if (map == null)

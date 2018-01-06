@@ -1,4 +1,4 @@
-﻿namespace NoteMap.Elements
+﻿namespace NoteMap.Maps
 {
     public class Position
     {

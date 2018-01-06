@@ -8,7 +8,9 @@ namespace NoteMap.Elements
     {
         Task<ElementDto> CreateElementOnMapAsync(CreateElementInput input);
 
-        Task<IList<ElementDto>> GetElementsOnMap(GetElementsOnMapInput input);
+        Task DeleteElementAsync(long id);
+
+        Task<IList<ElementDto>> GetElementsOnMapAsync(GetElementsOnMapInput input);
 
         Task UpdateElementLayerStylesAsync(UpdateElementLayerStylesInput input);
 

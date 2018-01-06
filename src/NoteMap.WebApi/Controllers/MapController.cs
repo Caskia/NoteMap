@@ -39,9 +39,17 @@ namespace NoteMap.WebApi.Controllers
             return await _mapAppService.CreateMapAsync(input);
         }
 
+        [Route("{id:long}/elements/{elementId:long}")]
+        [HttpDelete]
+        public async Task<bool> DeleteElementAsync(long id, long elementId)
+        {
+            await _elementAppService.DeleteElementAsync(elementId);
+            return true;
+        }
+
         [Route("{id:long}/elements")]
         [HttpGet]
-        public async Task<IList<ElementDto>> GetElementsOnMap(
+        public async Task<IList<ElementDto>> GetElementsOnMapAsync(
             long id,
             [FromQuery]double x1 = 0,
             [FromQuery]double y1 = 0,
@@ -49,7 +57,7 @@ namespace NoteMap.WebApi.Controllers
             [FromQuery]double y2 = 0
             )
         {
-            return await _elementAppService.GetElementsOnMap(new GetElementsOnMapInput()
+            return await _elementAppService.GetElementsOnMapAsync(new GetElementsOnMapInput()
             {
                 MapId = id,
                 BeginPosition = new Position()

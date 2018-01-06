@@ -1,4 +1,6 @@
-﻿namespace NoteMap.Elements
+﻿using NoteMap.Maps;
+
+namespace NoteMap.Elements
 {
     public class GetElementsOnMapInput
     {

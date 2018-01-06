@@ -9,6 +9,8 @@ namespace NoteMap.Maps
     {
         public string Name { get; set; }
 
+        public Position Offset { get; set; }
+
         public Scale Scale { get; set; }
 
         public long UserId { get; set; }
