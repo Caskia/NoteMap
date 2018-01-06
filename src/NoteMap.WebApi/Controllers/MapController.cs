@@ -43,10 +43,10 @@ namespace NoteMap.WebApi.Controllers
         [HttpGet]
         public async Task<IList<ElementDto>> GetElementsOnMap(
             long id,
-            [FromQuery]decimal x1 = 0,
-            [FromQuery]decimal y1 = 0,
-            [FromQuery]decimal x2 = 0,
-            [FromQuery]decimal y2 = 0
+            [FromQuery]double x1 = 0,
+            [FromQuery]double y1 = 0,
+            [FromQuery]double x2 = 0,
+            [FromQuery]double y2 = 0
             )
         {
             return await _elementAppService.GetElementsOnMap(new GetElementsOnMapInput()

@@ -4,12 +4,12 @@ namespace NoteMap.Elements
 {
     public class Scale
     {
-        private decimal _x;
-        private decimal _y;
-        private decimal maxScaleLevel = 5;
-        private decimal minScaleLevel = 1;
+        private double _x;
+        private double _y;
+        private double maxScaleLevel = 5;
+        private double minScaleLevel = 1;
 
-        public decimal X
+        public double X
         {
             get
             {
@@ -21,7 +21,7 @@ namespace NoteMap.Elements
             }
         }
 
-        public decimal Y
+        public double Y
         {
             get
             {
@@ -33,7 +33,7 @@ namespace NoteMap.Elements
             }
         }
 
-        private decimal LimitScaleRange(decimal scale)
+        private double LimitScaleRange(double scale)
         {
             return Math.Max(Math.Min(scale, maxScaleLevel), minScaleLevel);
         }

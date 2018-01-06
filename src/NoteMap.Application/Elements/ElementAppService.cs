@@ -50,6 +50,7 @@ namespace NoteMap.Elements
             }
 
             var elements = _elementRepository.GetAll()
+                 .Where(e => e.MapId == map.Id)
                  .Where(e => e.Position.X >= input.BeginPosition.X && e.Position.X <= input.EndPosition.X)
                  .Where(e => e.Position.Y >= input.BeginPosition.Y && e.Position.Y <= input.EndPosition.Y)
                  .ToList();

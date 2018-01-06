@@ -2,14 +2,14 @@
 {
     public class Style
     {
-        public decimal Height { get; set; }
+        public double Height { get; set; }
 
-        public decimal RealHeight { get; set; }
+        public double RealHeight { get; set; }
 
-        public decimal RealWidth { get; set; }
+        public double RealWidth { get; set; }
 
         public Scale Scale { get; set; }
 
-        public decimal Width { get; set; }
+        public double Width { get; set; }
     }
 }
