@@ -5,5 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\common\src\Jane.Autofac\Jane.Autofac.csproj" />
+    <ProjectReference Include="..\..\common\src\Jane.Log4Net\Jane.Log4Net.csproj" />
+    <ProjectReference Include="..\..\common\src\Jane.MongoDb\Jane.MongoDb.csproj" />
   </ItemGroup>
 </Project>

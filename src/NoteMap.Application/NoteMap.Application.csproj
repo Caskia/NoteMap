@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\common\src\Jane.AutoMapper\Jane.AutoMapper.csproj" />
     <ProjectReference Include="..\NoteMap.Core\NoteMap.Core.csproj" />
   </ItemGroup>
 </Project>
