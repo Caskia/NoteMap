@@ -71,7 +71,7 @@ namespace NoteMap.WebApi
                 .RegisterAssemblies(assemblies)
                 .UseMongoDb()
                 .UseLog4Net()
-                .UseAutoMapper(new AutoMapperConfiguration(), autoMapperConfigurationAssemblies)
+                .UseAutoMapper(autoMapperConfigurationAssemblies)
                 .UseAspNetCore(services, out var provider)
                 .CreateAutoMapperMappings()
                 .UseClockProvider(ClockProviders.Utc)
